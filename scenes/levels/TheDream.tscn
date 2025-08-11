@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjey02stxy11l"]
+
+[ext_resource type="PackedScene" uid="uid://bnnk48agg6ma3" path="res://scenes/Actors/players/ForTala#1.fbx" id="1_o35dm"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/Actors/players/proto_controller/proto_controller.tscn" id="2_o35dm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dblj2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3emai"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_6wqgr"]
+
+[node name="TheDream" type="Node3D"]
+
+[node name="flour" type="MeshInstance3D" parent="."]
+transform = Transform3D(42.0219, 0, 0, 0, 0.537509, 0, 0, 0, 28.6439, -1.87863, 0.160907, 1.02236)
+mesh = SubResource("BoxMesh_dblj2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.18128, 0, 0, 0, 11.5123, 0, 0, 0, 1.24231, 0, 0, 0)
+mesh = SubResource("CylinderMesh_3emai")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.18722, 0, 0, 0, 5.18722, 0, 0, 0, 5.18722, 8.7963, 2.98201, -4.99724)
+mesh = SubResource("PrismMesh_6wqgr")
+
+[node name="ForTala#1" parent="." instance=ExtResource("1_o35dm")]
+transform = Transform3D(3.56713, 0, 0, 0, 3.56713, 0, 0, 0, 3.56713, 3.75362, 0.491127, 0.415219)
+
+[node name="ProtoController" parent="." instance=ExtResource("2_o35dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78533, 0.44673, 2.53575)
