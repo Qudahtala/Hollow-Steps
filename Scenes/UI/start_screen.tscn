@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://brgnpu2lbds1k"]
+
+[ext_resource type="Script" uid="uid://du5rpg77hh8wq" path="res://Scripts/UI/create_room.gd" id="1_iwgee"]
+[ext_resource type="Script" uid="uid://bka4x6anvunxh" path="res://Scripts/UI/join_room.gd" id="2_3l4er"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -121.5
+offset_right = 200.0
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Hollow Steps"
+
+[node name="CreateRoom" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "CreateRoom
+"
+script = ExtResource("1_iwgee")
+
+[node name="JoinRoom" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Join Room"
+script = ExtResource("2_3l4er")
+
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/CreateRoom" to="CanvasLayer/Panel/VBoxContainer/CreateRoom" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/JoinRoom" to="CanvasLayer/Panel/VBoxContainer/JoinRoom" method="_on_pressed"]
